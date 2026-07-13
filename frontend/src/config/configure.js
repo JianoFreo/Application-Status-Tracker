@@ -1,16 +1,18 @@
-
 import { initializeApp } from "firebase/app";
+import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
-import {getAuth} from 'firebase/auth'
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+
+import dotenv from 'dotenv'
+dotenv.config()
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDPWuQ491HsP4I1WKowcUC3Q-oi2rdOySQ",
-  authDomain: "statusync-e9225.firebaseapp.com",
-  projectId: "statusync-e9225",
-  storageBucket: "statusync-e9225.appspot.com",
-  messagingSenderId: "733034325988",
-  appId: "1:733034325988:web:e2f9da7cc5ebc9fe5d49f1"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId
 };
 
 
